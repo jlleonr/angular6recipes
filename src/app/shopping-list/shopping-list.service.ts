@@ -1,18 +1,41 @@
 import { Ingredient } from "../shared/ingredient.model";
-import { EventEmitter } from "../../../node_modules/@angular/core";
+import { EventEmitter, OnDestroy } from "../../../node_modules/@angular/core";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
-export class ShoppingListService {
+import { tap, map } from 'rxjs/operators';
+import { Subscription } from "rxjs";
+
+@Injectable()
+export class ShoppingListService implements OnDestroy {
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
 
   private ingredientsList: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10)
   ];
 
+  //private tmpIngrLst: Ingredient[] = [];
+
   ingredientChanged = new EventEmitter<Ingredient[]>();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getIngredients(): Ingredient[] {
+  private url: string = 'https://np23d4gpl3.execute-api.us-east-2.amazonaws.com/staging/ingredients';
+  private subs: Subscription = null;
+
+  public getIngredientsFromHttp() {
+    return this.http.get(this.url)
+      .pipe(
+        map(res => res),
+        map(res => res['Items'])
+      )
+  }
+
+  public getDefaultIngredients(): Ingredient[] {
     return this.ingredientsList.slice();
   }
 

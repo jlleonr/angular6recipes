@@ -1,0 +1,16 @@
+{
+    "Items": [
+        {
+            "id": 2,
+            "amount": 3,
+            "name": "Onions"
+        },
+        {
+            "id": 1,
+            "amount": 6,
+            "name": "Bell Peppers"
+        }
+    ],
+    "Count": 2,
+    "ScannedCount": 2
+}
