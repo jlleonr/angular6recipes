@@ -1,0 +1,53 @@
+/* **** Navbar ***** */
+nav {
+    background: #FFCA28;
+    z-index: 2000;
+}
+
+h1 {
+    color: #777;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    padding: 20px 8px;
+}
+
+/* .btnColor{
+    color: #337ab7;
+} */
+
+/* ***** Dropdown menu ***** */
+ul.dropdown-menu {
+    background-color: #FFCA28;
+}
+
+ul.dropdown-menu li a {
+    color: #337ab7;
+}
+
+ul.dropdown-menu li a:hover {
+    background-color: rgb(241, 192, 42);
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: rgb(241, 192, 42);
+}
+
+.nav>li>a:focus {
+    background-color: #FFCA28;
+}
+
+/* **** Active page display ***** */
+.marg {
+    background: #FFCA28;
+    margin: 55px 0px 0px 0px;
+    padding-left: 20px;
+}
+
+/* ***** Responsive display ***** */
+@media screen and (max-width: 767px){
+    .adjust-marg {
+        margin-top: 50px;
+    }
+}
