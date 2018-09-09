@@ -1,0 +1,34 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// //color palettes 
+// $recipe-app-primary: mat-palette($mat-yellow, 400, 100, 700);
+
+// //accent
+// $recipe-app-accent: mat-palette($mat-orange, 100, 50, 400);
+
+//color palettes 
+$recipe-app-primary: mat-palette($mat-amber, 400);
+
+//accent
+$recipe-app-accent: mat-palette($mat-orange, 100);
+
+//warnings
+$recipe-app-warn: mat-palette($mat-red);
+
+
+$primary: mat-color($recipe-app-primary);
+$accent: mat-color($recipe-app-accent);
+$warn: mat-color($recipe-app-warn);
+
+
+
+//main theme
+$recipe-app-theme: mat-light-theme($recipe-app-primary, $recipe-app-accent, $recipe-app-warn);
+
+@include angular-material-theme($recipe-app-theme);
+
+
+
+
