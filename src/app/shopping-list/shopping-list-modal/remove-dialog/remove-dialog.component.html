@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1 mat-dialog-title style="color: red;">Warning!</h1>
+    <mat-dialog-content>
+      Are you sure you want to remove <span style="color: red;">{{ data.selectedIngredient }}</span> from the list?
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-raised-button class="pill" [mat-dialog-close]="true">Ok</button>
+      <button #cancelButton mat-raised-button class="pill" mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+  </div>
+</div>
