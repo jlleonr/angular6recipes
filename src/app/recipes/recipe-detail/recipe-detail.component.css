@@ -1,3 +1,12 @@
 .inline-name{
     display: inline-block !important;
 }
+
+.textColor {
+ /* color: #777; */
+ color: #337ab7;
+}
+
+.mat-menu-panel {
+    border-radius: 16px !important;
+}

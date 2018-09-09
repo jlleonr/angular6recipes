@@ -1,74 +1,59 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 300px">
+<mat-card>
+  <div class="row">
+    <div class="col-xs-12">
+      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive center-block" style="max-height: 300px">
+      <!-- <img mat-card-image [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive center-block" style="max-height: 300px"> -->
+    </div>
   </div>
-</div>
-<!-- <div class="row">
-  <div class="col-xs-12">
-    <h1>{{ recipe.name }}</h1>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <mat-card-footer>
+        <h1 class="inline-name">{{ recipe.name }}</h1>
+      </mat-card-footer>
+    </div>
   </div>
-</div> -->
-<div class="row">
-  <div class="col-xs-12">
-    <h1 class="inline-name">{{ recipe.name }}</h1>
-    <!-- <div class="btn-group pull-right" appDropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="javascript:void(0)" (click)="onAddIngredients(recipe.ingredients)">Add to Shopping List</a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">Edit Recipe</a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">Delete Recipe</a>
-        </li>
-      </ul>
-    </div> -->
+  <div class="row">
+    <div class="col-xs-12">
+      <br>
+      <h4 class="inline-name">Description:</h4>
+      <div class="btn-group pull-right" appDropdown>
+        <mat-card-actions>
+          <button mat-raised-button color=accent type="button" class="pill" [matMenuTriggerFor]="menu">
+            Manage Recipe
+            <span class="caret"></span>
+          </button>
+        </mat-card-actions>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false" class="mat-elevation-z6 text-center">
+          <button mat-button (click)="onAddIngredients(recipe.ingredients)" class="text-justify">
+            Add to List <i class="fa fa-plus text-secondary" aria-hidden="true" style="color: #337ab7"></i>
+          </button>
+          <br>
+          <button mat-button class="text-justify">
+            Edit Recipe <i class="fa fa-pencil text-secondary" aria-hidden="true" style="color: rgb(179, 141, 25)"></i>
+          </button>
+          <br>
+          <button mat-button class="text-justify">
+            Delete Recipe <i class="fa fa-times text-danger" aria-hidden="true"></i>
+          </button>
+        </mat-menu>
+      </div>
+      <mat-card-content>
+        <p>
+          {{ recipe.description }}
+        </p>
+      </mat-card-content>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <br>
-    <h4 class="inline-name">Description:</h4>
-    <div class="btn-group pull-right" appDropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="javascript:void(0)" (click)="onAddIngredients(recipe.ingredients)">Add to Shopping List
-            <i class="fa fa-plus text-secondary" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">Edit Recipe
-            <i class="fa fa-pencil text-secondary" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">Delete Recipe
-            <i class="fa fa-times text-danger" aria-hidden="true"></i>
-          </a>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <h4>
+          <p>Ingredients:</p>
+        </h4>
+        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} ({{ ingredient.amount }})
         </li>
       </ul>
     </div>
-    <p>
-      {{ recipe.description }}
-    </p>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <h4>
-        <p>Ingredients:</p>
-      </h4>
-      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
-        {{ ingredient.name }} ({{ ingredient.amount }})
-      </li>
-    </ul>
-  </div>
-</div>
+</mat-card>
