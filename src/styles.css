@@ -3,3 +3,17 @@
 i {
     padding: 5px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; background: #fafafa }
+
+/* Pill buttons */
+button.pill {
+    border-radius: 16px;
+    margin: 5px;
+    color: #337ab7 !important; 
+}
+
+mat-card.primary_bg {
+    background: #ffee58;
+}
