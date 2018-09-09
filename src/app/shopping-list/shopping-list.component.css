@@ -1,0 +1,10 @@
+button {
+    float: right;
+    height: 40px;
+    color: #337ab7;
+}
+
+/* ::ng-deep .example-tooltip-red {
+    color:#43a7ff !important;
+    font-size: 12px;   
+} */
