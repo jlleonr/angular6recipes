@@ -1,13 +1,17 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-fixed-top mat-elevation-z6">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">
-        Recipe Book
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-dropdown-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <a routerLink="/" routerLinkActive="active" class="navbar-brand">
+        Recipes Book
         <i class="fa fa-book" aria-hidden="true"></i>
       </a>
     </div>
 
-    <div class="navbar-default">
+    <!-- <div class="navbar-default">
       <ul class="nav navbar-nav">
         <li>
           <a routerLink="/recipes" routerLinkActive="active">
@@ -16,33 +20,63 @@
           </a>
         </li>
         <li>
-          <a routerLink="/shoppingList" routerLinkActive="active">
+          <a routerLink="/shoppingList" routerLinkActive="active" (click)="onShoppingListLink()">
             Shopping List
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <i [matBadge]="badgeNum" [matBadgeHidden]="badgeNum == 0 ? true : false" matBadgeSize="small" matBadgeColor="warn" class="fa fa-shopping-cart"
+              aria-hidden="true"></i>
           </a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appDropdown>
-          <a href="javascript:void(0)" class="dropdown-toggle" role="button">Edit
-            <!-- <span class="caret"></span> -->
-            <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <li>
+          <a href="javascript:void(0)" [matMenuTriggerFor]="menu">
+            Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        </li>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false" class="mat-elevation-z6">
+          <button mat-button class="btnColor">
+            Save Data <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </button>
+          <br>
+          <button mat-button class="btnColor">
+            Fetch Data <i class="fa fa-download" aria-hidden="true"></i>
+          </button>
+        </mat-menu>
+      </ul>
+    </div>
+  </div> -->
+    <div class="collapse navbar-collapse" id="navbar-dropdown-menu">
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/recipes" routerLinkActive="active">
+            Recipes
+            <i class="fa fa-file-text" aria-hidden="true"></i>
           </a>
+        </li>
+        <li>
+          <a routerLink="/shoppingList" routerLinkActive="active" (click)="onShoppingListLink()">
+            Shopping List
+            <i [matBadge]="badgeNum" [matBadgeHidden]="badgeNum == 0 ? true : false" matBadgeSize="small" matBadgeColor="warn" class="fa fa-shopping-cart"
+              aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="javascript:void(0)">Save Data
-                <i class="fa fa-floppy-o" aria-hidden="true"></i>
-              </a>
+              <a href="javascript:void(0)">Save Data <i class="fa fa-floppy-o" aria-hidden="true"></i></a>
             </li>
             <li>
-              <a href="javascript:void(0)">Fetch Data
-                <i class="fa fa-download" aria-hidden="true"></i>
-              </a>
+              <a href="javascript:void(0)">Fetch Data <i class="fa fa-download" aria-hidden="true"></i></a>
             </li>
           </ul>
         </li>
       </ul>
-    </div>
-  </div>
+    </div> <!-- /.collapse navbar-collapse -->
+  </div><!-- ./container-fluid-->
 </nav>
+<div class="marg container-fluid adjust-marg">
+  <h1> {{currentPage}}</h1>
+</div>
