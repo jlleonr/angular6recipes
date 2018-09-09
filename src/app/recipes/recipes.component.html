@@ -1,14 +1,17 @@
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-sm-12 col-md-5 marg">
     <app-recipe-list></app-recipe-list>
   </div>
-  <div class="col-md-7">
+  <div class="col-sm-12 col-md-7 marg">
+    <br>
     <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
     <ng-template #infoText>
-      <h4 class="text-center">
-        <p>Please Select a recipe to show its content below</p>
-        <i class="fa fa-arrow-circle-down fa-2x bounce" aria-hidden="true"></i>
-      </h4>
+      <mat-card>
+        <h4 class="text-center">
+          <p>Please select a recipe to show its content below</p>
+          <i class="fa fa-arrow-circle-down fa-2x bounce" aria-hidden="true"></i>
+        </h4>
+      </mat-card>
     </ng-template>
   </div>
 </div>
