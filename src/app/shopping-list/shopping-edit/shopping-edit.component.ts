@@ -27,8 +27,10 @@ export class ShoppingEditComponent implements OnInit {
     );
   }
 
-  onClear() {
-    this.shoppingListservice.resetIngredeints();
+  onReset() {
+    this.shoppingListservice.getDefaultIngredients();
+    this.nameInputRef.nativeElement.value = '';
+    this.amountInputRef.nativeElement.value = '';
   }
 
 }

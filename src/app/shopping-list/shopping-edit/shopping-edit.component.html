@@ -2,18 +2,21 @@
   <div class="col-xs-12">
     <form>
       <div class="row">
-        <div class="col-sm-5 form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" #nameInput>
+        <div class="col-sm-6">
+          <mat-form-field>
+            <input matInput placeholder="Name" type="text" id="name" #nameInput>
+          </mat-form-field>
         </div>
-        <div class="col-sm-2 form-group">
-          <label for="amount">Amount</label>
-          <input type="number" id="amount" class="form-control" #amountInput>
+        <div class="col-sm-6">
+          <mat-form-field>
+            <input matInput placeholder="amount" type="number" id="amount" #amountInput>
+          </mat-form-field>
         </div>
-        <div class="col-xs-12 btn-toolbar">
-          <button type="button" class="btn btn-success" (click)="onAddItem()">Add</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-primary" (click)="onClear()">Clear</button>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar text-right">
+          <button mat-raised-button class="pill textColor" color=accent type="button" (click)="onAddItem()">Add</button>
+          <button mat-raised-button class="pill" color=secondary type="button" (click)="onReset()">Reset</button>
         </div>
       </div>
     </form>
