@@ -1,9 +1,15 @@
 <a href="javascript:void(0)" class="list-group-item clearfix" (click)="onSelected(recipeItem.name)">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipeItem.name }}</h4>
-    <p class="list-group-item-text">{{ recipeItem.description }}</p>
+  <div class="row">
+    <div class="col-sm-8 col-2">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ recipeItem.name }}</h4>
+        <p class="list-group-item-text" style="overflow-wrap: break-word;">{{ recipeItem.description }}</p>
+      </div>
+    </div>
+    <div class="col-sm-4 col-10">
+      <span class="pull-right">
+        <img src="{{ recipeItem.imagePath }}" alt="{{ recipeItem.name }}" class="responsive" style="max-height: 50px;">
+      </span>
+    </div>
   </div>
-  <span class="pull-right">
-    <img src="{{ recipeItem.imagePath }}" alt="{{ recipeItem.name }}" class="responsive" style="max-height: 50px;">
-  </span>
 </a>
