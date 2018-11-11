@@ -1,0 +1,16 @@
+.mobile-divider {
+    display: none;
+}
+
+/* ***** Responsive display ***** */
+@media screen and (max-width: 412px){
+    div.pull-right {
+        float: none !important;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-divider {
+        display: block;
+    }
+}
